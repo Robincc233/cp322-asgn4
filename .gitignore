@@ -176,3 +176,6 @@ cython_debug/
 # other directories
 archives
 datasets
+
+# specific files
+/Assignment4.pdf
