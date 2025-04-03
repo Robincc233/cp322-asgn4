@@ -1,10 +1,18 @@
 ---
 title: "Assignment 4 Master Report"
-date: "1 April 2025"
+date: "3 April 2025"
 author: 
   - "Shurjo Majumder (ID: 169035249)"
   - "Robin Chen (ID: 210178740)"
 geometry: margin=2cm
+classoption:
+  - twocolumn
+header-includes: |
+    \usepackage{supertabular}
+    \newcommand\tcap{}
+    \renewenvironment{longtable}{\begin{center}\bottomcaption{\tcap}\begin{supertabular}}{\end{supertabular}\end{center}}
+    \renewcommand{\endhead}{}
+    \renewcommand{\endlastfoot}{}
 ---
 
 ## Introduction
@@ -15,6 +23,8 @@ In this report, we discuss a Convolutional Neural Network trained on the MNIST d
 
 The model has six (6) layers:
 
+\renewcommand\tcap{Layer parameter counts}
+
 | Layer             | Parameters |
 |:------------------|-----------:|
 | `conv2d_2`        |         80 |
@@ -24,16 +34,24 @@ The model has six (6) layers:
 | `flatten_1`       |          0 |
 | `dense_1`         |      7,850 |
 
-![]
+The CNN demonstrated a training accuracy of **99.92%**, and a test accuracy of **[insert here]**, with epochs set to 100. The confusion matrix is displayed in Figure 1.
 
-## Extracting Feature Vectors
+![Confusion Matrix of CNN](./assets/CNN_confusion_matrix.png)
+
+## Extracting Feature Vectors & Applying kNN
+
+Feature vectors of the dataset were extracted from the Flattened layer, and KNN using Euclidean distance and $k = 5$. The KNN model displayed an accuracy of **98.63%**
 
 ## Representation of Primary Features Via PCA
 
+PCA was applied to the entire dataset, flattening it to a single vector. Then mapped to a single 2-dimensional vector of the principle features, and plotted in the scatterplot bellow. Each unique class is shown using a distinct colour.
+
 ![Visualisation of the Dataset's Primary Features](./assets/PCA_visualisation.png)
 
-## Knn Report
+## PCA + kNN Report
 
 After performing the PCA again, but with 10 components, KNN was used with $k = 5$. The model reported a test accuracy of 96.47%.
 
 ## Conclusion
+
+
