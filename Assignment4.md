@@ -24,6 +24,8 @@ The model has six (6) layers:
 | `flatten_1`       |          0 |
 | `dense_1`         |      7,850 |
 
+![]
+
 ## Extracting Feature Vectors
 
 ## Representation of Primary Features Via PCA
